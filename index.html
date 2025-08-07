@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juwalan Ikan Patin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Juwalan Ikan Patin</h1>
+            </div>
+            <div class="header-icons">
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="product-category" class="product-category-section">
+        <div class="container">
+            <h2>Produk Ikan Patin</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="ikan_patin.jpg" alt="Ikan Patin Segar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ikan Patin Segar</h3>
+                        <div class="product-price">
+                            <span class="price">Rp 25.000 / kg</span>
+                        </div>
+                        <div class="product-quantity">
+                            <label for="quantity">Jumlah (kg):</label>
+                            <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        </div>
+                        <button class="btn btn-primary add-to-cart" onclick="langsung跳转WhatsApp()">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> WhatsApp: <a href="https://wa.me/6285159988636" target="_blank">+62 851-5998-8636</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Lokasi: Bumi Dipasena Agung</p>
+            </div>
+            <p>&copy; 2025 Juwalan Ikan Patin. Hak Cipta Dilindungi Undang-Undang.</p>
+        </div>
+    </footer>
+
+    <script>
+        function langsung跳转WhatsApp() {
+            const quantity = document.getElementById('quantity').value;
+            const pricePerKg = 25000;
+            const totalPrice = quantity * pricePerKg;
+
+            const whatsappUrl = `https://wa.me/6285159988636?text=${encodeURIComponent(
+                `Halo, saya ingin memesan:\n\n- ikan patin\n\nTotal Harga: ${quantity}kg Rp ${totalPrice.toLocaleString('id-ID')}\n\nMohon konfirmasi pesanan saya. Terima kasih!`
+            )}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
